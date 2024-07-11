@@ -23,7 +23,7 @@ check_return_code "$FASE"
 FASE="Instacao SaltStack"
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') - $FASE"
-dnf install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api
+dnf install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api -y
 check_return_code "$FASE"
 systemctl enable salt-master && systemctl start salt-master
 check_return_code "$FASE"
