@@ -43,14 +43,11 @@ check_return_code "$FASE"
 systemctl enable salt-minion && systemctl start salt-minion
 check_return_code "$FASE"
 
-FASE="Validar IP"
-# Solicita o nome
-read -p "Digite o nome: " nome
+FASE="Inseri  e Valida IP"
 
-# Solicita o IP
+read -p "Digite o nome: " nome
 read -p "Digite o IP: " ip
 
-# Valida o IP
 if validar_ip $ip; then
     echo "$ip    $nome" | sudo tee -a /etc/hosts > /dev/null
     check_return_code "$FASE"
