@@ -33,3 +33,7 @@ systemctl enable salt-syndic && systemctl start salt-syndic
 check_return_code "$FASE"
 systemctl enable salt-api && systemctl start salt-api
 
+FASE="Criar diretorio de runbook"
+mkdir -p /srv/salt
+check_return_code "$FASE"
+
