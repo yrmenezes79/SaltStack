@@ -51,7 +51,7 @@ read -p "Digite o IP do master SaltStack: " ip
 if validar_ip $ip; then
     echo "$ip    $nome" | sudo tee -a /etc/hosts > /dev/null
     check_return_code "$FASE"
-    sed -i 's/#master: salt/master $nome/g' /etc/salt/minion
+    echo "master: ${nome}" >> /etc/salt/minion
     check_return_code "$FASE"
     systemctl restart salt-minion 
     check_return_code "$FASE"
