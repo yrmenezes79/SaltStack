@@ -45,8 +45,8 @@ check_return_code "$FASE"
 
 FASE="Inseri  e Valida IP"
 
-read -p "Digite o nome: " nome
-read -p "Digite o IP: " ip
+read -p "Digite o hostname do master SaltStack: " nome
+read -p "Digite o IP do master SaltStack: " ip
 
 if validar_ip $ip; then
     echo "$ip    $nome" | sudo tee -a /etc/hosts > /dev/null
